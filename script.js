@@ -9,8 +9,8 @@ const proyectos = [
 
 const formacionAcademica = [
   {
-    institucion: "UNIVERSIDAD DE LA COSTA",
-    detalle: "Ingeniería de Sistemas · en curso",
+    institucion: "UNIVERSIDAD DE LA COSTA ",
+    detalle: "(Ingeniería de Sistemas · en curso)",
   },
 ];
 
