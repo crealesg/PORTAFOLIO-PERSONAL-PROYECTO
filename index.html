@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Portafolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>Carlos Reales</h1>
+  <p>Estudiante de Ingeniería de Sistemas</p>
+
+  <hr>
+
+  <h2 id="sobre-mi">Sobre mí</h2>
+  <p>
+    Soy Carlos, estudiante de Ingeniería de Sistemas, Me gusta la programación
+    porque me hace llevar mis conocimientos a otro nivel de una manera impensable,
+    Actualmente estoy aprendiendo control de versiones con Git y GitHub, y cómo 
+    publicar proyectos en la web con Netlify.
+  </p>
+
+  <hr>
+
+  <h2 id="proyectos">Proyectos</h2>
+  <div id="listaProyectos"></div>
+
+  <hr>
+
+  <h2 id="formacion">Formación</h2>
+  <ul id="listaFormacion"></ul>
+
+  <hr>
+
+  <h2 id="contacto">Contacto</h2>
+  <form id="formContacto">
+    <label>Nombre:</label><br>
+    <input id="inputNombre" type="text" required><br><br>
+
+    <label>Correo:</label><br>
+    <input id="inputCorreo" type="email" required><br><br>
+
+    <label>Mensaje:</label><br>
+    <textarea id="inputMensaje" rows="4" required></textarea><br><br>
+
+    <button type="submit">Enviar</button>
+  </form>
+  <p id="confirmacionEnvio">Gracias, tu mensaje quedó registrado.</p>
+
+  <hr>
+
+  <footer>
+    <p>Buenas Prácticas de Desarrollo de Software · CUC</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
