@@ -5,12 +5,28 @@ const proyectos = [
     titulo: "PORTAFOLIO PERSONAL",
     descripcion: "Sitio hecho con HTML, CSS y JavaScript subido a GitHub con ramas y Pull Requests y desplegado en Netlify",
   },
+  {
+    titulo: "CALCULADORA SIMPLE",
+    descripcion: "Página que recibe dos números y muestra el resultado de una operación básica usando JavaScript.",
+  },
+  {
+    titulo: "QUIZ DE PREGUNTAS",
+    descripcion: "Página que muestra preguntas de opción múltiple y permite revelar la respuesta correcta al hacer clic.",
+  },
+  {
+    titulo: "GENERADOR DE FRASES",
+    descripcion: "Botón que muestra una frase aleatoria tomada de una lista guardada en el código, cada vez que se hace clic.",
+  },
 ];
 
 const formacionAcademica = [
   {
     institucion: "UNIVERSIDAD DE LA COSTA ",
     detalle: "(Ingeniería de Sistemas · en curso)",
+  },
+  {
+    institucion: "COLIGIO MILITAR ACOOLSURE ",
+    detalle: "(Bachillerato)",
   },
 ];
 
