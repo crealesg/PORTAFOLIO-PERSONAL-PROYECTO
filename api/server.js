@@ -1,28 +1,35 @@
 const http = require('http');
-const d = [4.5, 3.5, 2.5, 4.0];
-const s = http.createServer((req, res) => {
-    if (req.url === '/salud') {
-        res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
-        res.end(JSON.stringify({ estado: 'ok' }));
-        return;
-    }
-    if (req.url === '/equipo') {
-        res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
-        res.end(JSON.stringify({
-            equipo: 'Equipo NN',
-            integrantes: ['Nombre Uno', 'Nombre Dos']
-        }));
-        return;
-    }
-    if (req.url === '/notas') {
-        let t = 0;
-        for (let i = 0; i < d.length; i++) { t = t + d[i]; }
-        let p = t / d.length;
-        res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
-        res.end(JSON.stringify({ promedio: p, aprobado: p >= 3.0 }));
-        return;
-    }
-    res.writeHead(404, { 'Content-Type': 'application/json; charset=utf-8' });
-    res.end(JSON.stringify({ error: 'Ruta no encontrada' }));
+
+const NOTA_MINIMA = 3.0;
+const notasDelCurso = [4.5, 3.5, 2.5, 4.0];
+
+function calcularPromedio(notas) {
+  return notas.reduce((suma, n) => suma + n, 0) / notas.length;
+}
+
+function estaAprobado(promedio) { return promedio >= NOTA_MINIMA; }
+
+function responder(res, codigo, datos) {
+  res.writeHead(codigo, { 'Content-Type': 'application/json; charset=utf-8' });
+  res.end(JSON.stringify(datos, null, 2));
+}
+
+const servidor = http.createServer((req, res) => {
+  if (req.url === '/salud') {
+    responder(res, 200, { estado: 'ok' });
+    return;
+  }
+  if (req.url === '/equipo') {
+    responder(res, 200, { equipo: 'Equipo 08',
+      integrantes: ['Carlos Reales'] });
+    return;
+  }
+  if (req.url === '/notas') {
+    const promedio = calcularPromedio(notasDelCurso);
+    responder(res, 200, { promedio: promedio, aprobado: estaAprobado(promedio) });
+    return;
+  }
+  responder(res, 404, { error: 'Ruta no encontrada' });
 });
-s.listen(80);
+
+servidor.listen(80);
