@@ -1,6 +1,7 @@
 // front/src/App.jsx
 // Versión inicial, sin reutilización: cada sección repite su propia estructura.
-import Proyectos from './components/Proyectos';
+import Proyectos from './components/Proyectos'; 
+import Formacion from './components/Formacion';
 function App() {
   return (
     <>
@@ -17,6 +18,7 @@ function App() {
         </p>
       </section>
       <Proyectos />
+      <Formacion />
     </>
   );
 }
