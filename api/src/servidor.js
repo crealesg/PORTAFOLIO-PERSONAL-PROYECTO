@@ -4,6 +4,7 @@ const cors = require('cors');
 const rutasPortafolio = require('./rutas/portafolio');
 
 const app = express();
+const ORIGEN_FRONT = 'http://cuc-bp-eq08-reales-sitio-2026.s3-website-us-east-1.amazonaws.com';
 
 // Middleware compartido: registra cada petición en un solo lugar.
 function registrar(req, res, siguiente) {
@@ -11,7 +12,8 @@ function registrar(req, res, siguiente) {
   siguiente();
 }
 
-app.use(cors()); // se restringe al origen de S3 en el siguiente bloque
+// CORS restringido únicamente al bucket público del frontend en S3.
+app.use(cors({ origin: ORIGEN_FRONT }));
 app.use(express.json());
 app.use(registrar);
 app.use('/', rutasPortafolio);
