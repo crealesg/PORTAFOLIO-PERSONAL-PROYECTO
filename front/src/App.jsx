@@ -1,6 +1,6 @@
 // front/src/App.jsx
 // Versión inicial, sin reutilización: cada sección repite su propia estructura.
-
+import Proyectos from './components/Proyectos';
 function App() {
   return (
     <>
@@ -16,6 +16,7 @@ function App() {
           publicar proyectos en la web.
         </p>
       </section>
+      <Proyectos />
     </>
   );
 }

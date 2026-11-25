@@ -107,3 +107,13 @@ footer {
   text-align: center;
   margin-top: 40px;
 }
+
+.mensaje-exito {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.mensaje-error {
+  color: #c62828;
+  font-weight: bold;
+}
