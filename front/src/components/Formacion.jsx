@@ -1,4 +1,5 @@
 // front/src/components/Formacion.jsx
+import Seccion from './Seccion';
 
 const formacion = [
   { id: 1, institucion: 'UNIVERSIDAD DE LA COSTA', detalle: '(Ingeniería de Sistemas · en curso)' },
@@ -7,8 +8,7 @@ const formacion = [
 
 function Formacion() {
   return (
-    <section id="formacion">
-      <h2>Formación</h2>
+    <Seccion id="formacion" titulo="Formación">
       <ul>
         {formacion.map((estudio) => (
           <li key={estudio.id}>
@@ -16,7 +16,7 @@ function Formacion() {
           </li>
         ))}
       </ul>
-    </section>
+    </Seccion>
   );
 }
 

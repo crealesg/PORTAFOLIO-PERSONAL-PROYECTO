@@ -1,6 +1,7 @@
 // front/src/components/Contacto.jsx
 import { useState } from 'react';
 import { enviarMensaje } from '../api';
+import Seccion from './Seccion';
 
 function Contacto() {
   const [nombre, setNombre] = useState('');
@@ -25,8 +26,7 @@ function Contacto() {
   }
 
   return (
-    <section id="contacto">
-      <h2>Contacto</h2>
+    <Seccion id="contacto" titulo="Contacto">
       <form onSubmit={manejarEnvio} noValidate>
         <label htmlFor="nombre">Nombre:</label><br />
         <input id="nombre" type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} /><br /><br />
@@ -41,7 +41,7 @@ function Contacto() {
       </form>
       {enviado && <p className="mensaje-exito">Gracias, tu mensaje quedó registrado.</p>}
       {error && <p className="mensaje-error">{error}</p>}
-    </section>
+    </Seccion>
   );
 }
 
