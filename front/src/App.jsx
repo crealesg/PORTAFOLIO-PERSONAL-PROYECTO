@@ -2,6 +2,7 @@
 // Versión inicial, sin reutilización: cada sección repite su propia estructura.
 import Proyectos from './components/Proyectos'; 
 import Formacion from './components/Formacion';
+import Contacto from './components/Contacto';
 function App() {
   return (
     <>
@@ -19,6 +20,7 @@ function App() {
       </section>
       <Proyectos />
       <Formacion />
+      <Contacto />
     </>
   );
 }
